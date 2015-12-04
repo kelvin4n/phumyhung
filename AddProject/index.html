@@ -8,6 +8,7 @@
 
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  <script src="addRow.js"></script>
+ <script src="dragdrop.js"></script>
 
 </head>
 <body>
@@ -102,7 +103,7 @@
             <td width="33%"><input type="text" id="Parner_Type"></td>
             <td width="16%""15%" class="title" width:>Parner Name</td>
             <td width="28%"><input type="text" id="Parner_Name"></td>
-            <td width="7%" class="add"><input type="button" class="btAdd" value="Add" onclick="addMoreRows(this.form, 'Parner_Type', 'Parner_Name', 'Parner');"/></td>
+            <td width="7%" class="add"><input type="button" class="btAdd" value="Add" onclick="addMoreRows(this.form, 'Parner_Type', 'Parner_Name', 'Parner', 1);"/></td>
           </tr>
         </table>
 
@@ -155,7 +156,7 @@
             <td width="33%"><input type="text" id="Launch_payment"></td>
             <td width="16%""15%" class="title" width:>Number</td>
             <td width="28%"><input type="text" id="Number"></td>
-            <td width="7%" class="add"><input type="button" class="btAdd" value="Add" onclick="addMoreRows(this.form, 'Launch_payment', 'Number', 'payment');"/></td>
+            <td width="7%" class="add"><input type="button" class="btAdd" value="Add" onclick="addMoreRows(this.form, 'Launch_payment', 'Number', 'payment', 2);"/></td>
           </tr>
         </table>
         <table id="payment" style="margin-top:-1px" border="1">
@@ -178,7 +179,7 @@
             <td width="33%"><input type="text" id="Fees"></td>
             <td width="16%""15%" class="title" width:>Value</td>
             <td width="28%"><input type="text" id="Value"></td>
-            <td width="7%" class="add"><input type="button" class="btAdd" value="Add" onclick="addMoreRows(this.form, 'Fees', 'Value', 'fees');"/></td>
+            <td width="7%" class="add"><input type="button" class="btAdd" value="Add" onclick="addMoreRows(this.form, 'Fees', 'Value', 'fees', 3);"/></td>
           </tr>
         </table>
         <table id="fees" style="margin-top:-1px" border="1">
@@ -195,7 +196,7 @@
       <input type="checkbox" name="" id="h6" class="input" checked>
       <label for="h6" class="label">Attach</label>
       <div class="content">
-        <table border="1">
+        <!-- <table border="1">
           <tr>
             <td width="16%""15%" class="title" width:>Attach Name</td>
             <td width="33%"></td>
@@ -203,8 +204,20 @@
             <td width="28%"></td>
             <td width="7%" class="add"><input type="button" class="btAdd" value="Add"/></td>
           </tr>
-        </table>
-        <table style="margin-top:-1px" border="1">
+        </table> -->
+
+        <table border="0" class="dragdrop">
+          <tr>
+            <td>
+              <div id="dragandrophandler">Drag & Drop Files Here</div>
+              <div id="status1"></div>
+            </td>
+          </tr>
+        </table> 
+
+<br/>
+
+       <!--  <table style="margin-top:-1px" border="1">
           <tr>
             <td width="7%" class="title">No</td>
             <td width="42%" class="title">Attach Name</td>
@@ -217,7 +230,7 @@
             <td></td>
             <td width="7%" class="delete"><a href="#">Delete</a></td>
           </tr>
-        </table>
+        </table> -->
       </div>
     </section>
     <div class="comment_fill">
